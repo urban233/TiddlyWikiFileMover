@@ -1,10 +1,17 @@
 import os
 import shutil
+import sys
+
 import toml
 import re
 
 # Define paths
-script_folder = os.path.dirname(os.path.realpath(__file__))
+# Determine the folder where the script or executable is located
+if getattr(sys, 'frozen', False):  # Check if the script is running as a PyInstaller bundle
+    script_folder = os.path.dirname(sys.argv[0])  # This gets the directory of the executable
+else:
+    script_folder = os.path.dirname(os.path.realpath(__file__))  # Use current script folder
+
 config_file_path = os.path.join(script_folder, "config.toml")
 
 # Load configuration from the TOML file
