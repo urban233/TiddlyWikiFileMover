@@ -1,0 +1,7 @@
+[version]
+major = 1
+minor = 1
+
+[folders]
+download_folder = "C:/Users/student/Downloads"
+target_folder = "old_versions"
